@@ -1,0 +1,43 @@
+<div class="row">
+	<div class="col-xs-12">
+		<div class="page-header">
+			<h1>Outstanding Items</h1>
+		</div>
+		<div class="input-group" ng-repeat="item in outstanding">
+      <span class="input-group-addon">
+        <input type="checkbox" ng-click="addToBasketed(item, $index)">
+      </span>
+      <input type="text" class="form-control" value="{{ item.name }}" ng-model="item.name">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" ng-click="removeFromOutstanding($index)"><i class="glyphicon glyphicon-trash"></i></button>
+      </span>
+    </div>
+    <form class="form form-horizontal well" ng-submit="addNewItem()">
+    	<div class="form-group">
+    		<label for="new-item" class="col-xs-12">Add to list</label>
+    		<div class="col-xs-8">
+    			<input type="text" id="new-item" name="new-item" ng-model="newItem" class="form-control" placeholder="What is it that you need?">
+    		</div>
+    		<div class="col-xs-4">
+    			<button type="submit" class="btn btn-primary btn-block">Add</button>
+    		</div>
+    	</div>
+    </form>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+		<div class="page-header">
+			<h1>Basketed Items</h1>
+		</div>
+		<div class="input-group" ng-repeat="item in basketed">
+      <span class="input-group-addon">
+        <input type="checkbox" checked ng-click="addToOutstanding(item, $index)">
+      </span>
+      <input type="text" class="form-control" value="{{ item.name }}" readonly>
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" ng-click="removeFromBasketed($index)"><i class="glyphicon glyphicon-trash"></i></button>
+      </span>
+    </div>
+	</div>
+</div>

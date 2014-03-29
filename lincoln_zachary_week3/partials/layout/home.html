@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="page-header">
+      <h1>Employee Directory</h1>
+      <button class="btn btn-sm btn-primary pull-right">Add New Employee</button>
+    </div>
+  </div>
+</div>
+<div class="row">
+	<div class="col-xs-12 col-md-4">
+    <form class="form form-horizontal well" ng-submit="addNewEmployee()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" ng-model="name" placeholder="Joe Smith" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="streetAddress">Street Address</label>
+        <input type="text" id="streetAddress" name="streetAddress" ng-model="streetAddress" placeholder="123 Example Rd." class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" id="city" name="city" ng-model="city" placeholder="i.e. Burlington" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="state">State</label>
+        <input type="text" id="state" name="state" ng-model="state" placeholder="i.e. Vermont" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="zip">Zip</label>
+        <input type="text" id="zip" name="zip" ng-model="zip" placeholder="i.e. 05405" class="form-control">
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Submit</button>
+    </form>
+  </div>
+  <div class="col-xs-12 col-md-8">
+    <div class="row">
+      <div class="col-xs-4" ng-repeat="employee in employees track by $index">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <button type="button" class="close" ng-click="fireEmployee($index)">&times;</button>
+            <h4 class="panel-title">{{ employee.name }}</h4>
+          </div>
+          <div class="panel-body">
+            <address>
+              <strong>{{ employee.streetAddress }}</strong><br>
+              {{ employee.city }} {{ employee.state }}, {{ employee.zip }}
+            </address>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
