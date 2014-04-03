@@ -18,6 +18,16 @@ app.config(['$routeProvider', function($routeProvider){
 		controller: 'HomeCtrl',
 		pageTitle: 'Home'
 	})
+	.when('/employee/:id', {
+		templateUrl: 'partials/layout/detail.html',
+		controller: 'DetailCtrl',
+		pageTitle: 'Employee'
+	})
+	.when('/new', {
+		templateUrl: 'partials/layout/new.html',
+		controller: 'NewCtrl',
+		pageTitle: 'New Employee'
+	})
 	.when('/error', {
 		templateUrl: 'partials/layout/error.html',
 		controller: 'ErrorCtrl',

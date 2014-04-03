@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="page-header">
+      <h1>Add New Employee</h1>
+    </div>
+  </div>
+  <div class="col-xs-12">
+    <form class="form" ng-submit="addNewEmployee()">
+      <fieldset>
+        <legend>Vitals</legend>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" ng-model="name" placeholder="Joe Smith" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="role">Role</label>
+          <textarea type="text" id="role" name="role" ng-model="role" placeholder="Job Description" class="form-control" rows="5"></textarea>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Address</legend>
+        <div class="form-group">
+          <label for="streetAddress">Street Address</label>
+          <input type="text" id="streetAddress" name="streetAddress" ng-model="streetAddress" placeholder="123 Example Rd." class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="city">City</label>
+          <input type="text" id="city" name="city" ng-model="city" placeholder="i.e. Burlington" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="state">State</label>
+          <input type="text" id="state" name="state" ng-model="state" placeholder="i.e. Vermont" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="zip">Zip</label>
+          <input type="text" id="zip" name="zip" ng-model="zip" placeholder="i.e. 05405" class="form-control">
+        </div>
+      </fieldset>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
